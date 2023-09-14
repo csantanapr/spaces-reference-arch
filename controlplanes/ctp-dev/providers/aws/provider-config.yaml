@@ -4,8 +4,4 @@ metadata:
   name: default
 spec:
   credentials:
-    source: Secret
-    secretRef:
-      name: upbound-provider-creds
-      namespace: upbound-system
-      key: creds
+    source: IRSA
