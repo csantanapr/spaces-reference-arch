@@ -17,6 +17,22 @@ spec:
 apiVersion: pkg.crossplane.io/v1
 kind: Provider
 metadata:
+  name: upbound-provider-aws-s3
+spec:
+  package: xpkg.upbound.io/upbound/provider-aws-s3:v0.40.0
+  packagePullPolicy: IfNotPresent
+  controllerConfigRef:
+    name: irsa-controllerconfig
+  revisionActivationPolicy: Automatic
+  revisionHistoryLimit: 1
+  # We keep skipDependencyResolution disabled to work around a bug that
+  # prevents configuration dependencies from resolving.
+  # See https://github.com/crossplane/crossplane/issues/4588.
+  skipDependencyResolution: false
+---
+apiVersion: pkg.crossplane.io/v1
+kind: Provider
+metadata:
   name: upbound-provider-aws-eks
 spec:
   package: xpkg.upbound.io/upbound/provider-aws-eks:v0.39.0
