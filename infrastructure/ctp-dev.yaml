@@ -5,7 +5,7 @@ metadata:
 spec:
   source:
     git:
-      url: https://github.com/upbound/spaces-reference-arch
+      url: https://github.com/cwilhit/spaces-reference-arch
       auth:
         type: None
       path: /controlplanes/ctp-dev/
